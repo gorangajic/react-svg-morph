@@ -16,19 +16,25 @@ class SvgMorph extends React.Component {
         this.progress = 0;
         this.state = {
             current: [],
+            viewBox: props.viewBox || [0, 0, props.width, props.height].join(' '),
         };
     }
 
     componentWillMount() {
+        var state = {};
         this.node = document.createElement('div');
         this.node.style.display = 'none';
         document.body.appendChild(this.node);
         let path = this.getSvgInfo(this.props);
+        let viewBox = this.node.querySelector('svg').getAttribute('viewBox');
+        if (viewBox) {
+            state.viewBox = viewBox;
+        }
         let paths = normalizePaths(path, path, {rotation: this.props.rotation});
         this.from = paths.from;
         this.to = paths.to;
-        let current = getProgress(this.from, this.to, 1);
-        this.setState({current: current});
+        state.current = getProgress(this.from, this.to, 1);
+        this.setState(state);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -75,7 +81,7 @@ class SvgMorph extends React.Component {
     render() {
         var width = this.props.width;
         var height = this.props.height;
-        var viewBox = [0, 0, width, height].join(' ');
+        var viewBox = this.state.viewBox;
         if (this.progress === 100) {
             return React.cloneElement(this.props.children, {width: width, height: height});
         }
@@ -95,6 +101,7 @@ SvgMorph.propTypes = {
     height: React.PropTypes.number,
     duration: React.PropTypes.number,
     children: React.PropTypes.element,
+    viewBox: React.PropTypes.string,
 };
 
 SvgMorph.defaultProps = {
