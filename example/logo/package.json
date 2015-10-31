@@ -1,0 +1,19 @@
+{
+  "name": "react-svg-morph-logo-example",
+  "version": "0.0.1",
+  "description": "example logo morph",
+  "main": "main.js",
+  "author": "Goran Gajic <fero.null@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "react-icons": "^0.1.2",
+    "underscore": "^1.8.3",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
