@@ -18,7 +18,7 @@ npm install react-svg-morph --save
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SvgMorph from 'react-svg-morph';
+import MorphReplace from 'react-svg-morph';
 
 class Checked extends React.Component {
     render() {
@@ -53,9 +53,9 @@ class App extends React.Component {
     render() {
         return (
             <div onClick={this.toggleChecked.bind(this)}>
-                <SvgMorph width={100} height={100}>
+                <MorphReplace width={100} height={100}>
                     {this.state.checked ? <Checked /> : <CheckBox />}
-                </SvgMorph>
+                </MorphReplace>
             </div>
         );
     }

@@ -2,8 +2,8 @@
   "name": "react-svg-morph",
   "version": "0.0.2",
   "description": "morph your svg component one into another other",
-  "main": "lib/SvgMorph.js",
-  "jsnext:main": "src/SvgMorph.js",
+  "main": "lib/MorphReplace.js",
+  "jsnext:main": "src/MorphReplace.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "eslint": "eslint src"
