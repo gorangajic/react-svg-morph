@@ -1,7 +1,10 @@
-import * as PathConverter from './PathConverter';
+import * as PathConverter from './pathConverter';
 
 export function readAttrs(node) {
     var attrs = {};
+    if (!node.attributes) {
+        return attrs;
+    }
     Object.keys(node.attributes).forEach(function(_key) {
         var val = node.attributes[_key];
         var key = _key.toLowerCase();
@@ -23,7 +26,14 @@ export function parseStyles(styleString) {
     if (!styleString) {
         return [];
     }
-
+    if (typeof styleString === "object") {
+        return Object.keys(styleString).map(function(key) {
+            return {
+                prop: key,
+                val: styleString[key],
+            };
+        });
+    }
     return styleString.split(';').map(function(declaration) {
         var [prop, val] = declaration.split(':').map(function(p) {
             return p.replace(' ', '');
@@ -37,7 +47,9 @@ export function parseStyles(styleString) {
 
 export function readStyles(node) {
     var style = {};
-    console.log('node', node.attributes);
+    if (!node.attributes || !node.attributes.style) {
+        return {};
+    }
     parseStyles(node.attributes.style).forEach(({val, key}) => {
         switch (key) {
         case 'fill':
@@ -53,13 +65,16 @@ export function readStyles(node) {
 }
 
 export function getAllChildren(node) {
-    var i = 0;
-    var els = [];
-    var len = node.children.length;
+    let i = 0;
+    let els = [];
+    if (!node.children) {
+        return els;
+    }
+    let len = node.children.length;
     for ( ; i < len; i++) {
         let el = node.children[i];
         els.push(el);
-        if (el.children.length > 0) {
+        if (el.children && el.children.length > 0) {
             els = els.concat(getAllChildren(el));
         }
     }
@@ -68,7 +83,7 @@ export function getAllChildren(node) {
 }
 
 export function getPathAttributes(node, defaultItem) {
-    var item = {
+    let item = {
         trans: {
             rotate: [360, 12, 12],
         },
@@ -76,7 +91,11 @@ export function getPathAttributes(node, defaultItem) {
         ...defaultItem,
     };
 
-    var nodeName = node.name.toUpperCase();
+    if (!node || !node.name) {
+        return false;
+    }
+
+    let nodeName = node.name.toUpperCase();
     switch (nodeName) {
     case 'PATH':
         item.path = node.attributes.d;
@@ -107,17 +126,17 @@ export function getPathAttributes(node, defaultItem) {
 }
 
 export default function findSvgRoot(node) {
-    if (node.name.toUpperCase() === "SVG") {
-        return node;
+    if (!node || !node.name || node.name.toUpperCase() !== "SVG") {
+        return node.children.find((child) => findSvgRoot(child));
     }
-    return node.children.find((child) => findSvgRoot(child));
+
+    return node;
 }
 
 export default function extractSvgPaths(root) {
     var svgRoot = findSvgRoot(root);
     var children = getAllChildren(svgRoot);
     var svg = { ...svgRoot.attributes };
-
     var rootAttr = readAttrs(svgRoot);
     var rootStyles = readStyles(svgRoot);
 

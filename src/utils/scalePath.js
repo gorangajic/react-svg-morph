@@ -13,8 +13,6 @@ export default function scalePath(path, base, _width, _height) {
         scale = base / height;
         x = (height - width) / 2;
     }
-
-    console.log('scale', scale);
     return svgpath(path).translate(x, y).scale(scale).abs()
                 .round(1) // Here the real rounding happens
                 .rel()

@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import xmlParser from 'xml-parser';
-import { renderToStaticMarkup } from 'react-dom/server';
 import normalizeSvg from './utils/normalizeSvg';
 import { normalizePaths, getProgress } from './utils/morph';
+import renderToJson from 'react-render-to-json';
 
 export default
 class MorphTransition extends React.Component {
@@ -75,14 +73,17 @@ class MorphTransition extends React.Component {
                 this.setChild('to', child);
             }
         });
+        if (!this.toSvg || !this.fromSvg) {
+            throw new Error("Please provide `from` and `to` elements")
+        }
     }
     getSvgInfo(child) {
         let key = child.key;
         if (this.svgCache[key]) {
             return this.svgCache[key];
         }
-        let xmlObj = xmlParser(renderToStaticMarkup(child));
-        let svg = normalizeSvg(xmlObj.root);
+        let json = renderToJson(child);
+        let svg = normalizeSvg(json);
         if (svg.viewBox) {
             this.viewBox = svg.viewBox;
         }
