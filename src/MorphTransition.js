@@ -31,17 +31,8 @@ class MorphTransition extends React.Component {
     update(progress) {
         this.setChildren();
         this.normalize();
-        console.log(this.from, this.to);
         let current = getProgress(this.from, this.to, progress);
-        console.log('progress', progress, current)
         this.setState({current: current});
-    }
-
-    componentWillUnmount() {
-        if (this.node) {
-            ReactDOM.unmountComponentAtNode(this.node);
-            document.body.removeChild(this.node);
-        }
     }
 
     render() {
@@ -64,7 +55,6 @@ class MorphTransition extends React.Component {
         let paths = normalizePaths(this.fromSvg.paths, this.toSvg.paths, {rotation: this.props.rotation});
         this.from = paths.from;
         this.to = paths.to;
-        console.log('normalize', this.fromSvg.paths, this.toSvg.paths);
     }
     setChild(type, child) {
         var key = child.key;
