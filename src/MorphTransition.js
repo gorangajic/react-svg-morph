@@ -64,8 +64,14 @@ class MorphTransition extends React.Component {
         this[type + 'Child'] = child;
         this[type + 'Svg'] = this.getSvgInfo(child);
     }
+    loopChildren(fn) {
+        React.Children.toArray(this.props.children).forEach(fn);
+    }
     setChildren() {
-        React.Children.toArray(this.props.children).forEach((child) => {
+        this.loopChildren((child) => {
+            if (!child || !child.props) {
+                return ;
+            }
             if ( child.props.type === "from") {
                 this.setChild('from', child);
             }
