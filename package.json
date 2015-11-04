@@ -1,6 +1,6 @@
 {
   "name": "react-svg-morph",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "morph your svg component one into another other",
   "main": "lib/MorphReplace.js",
   "jsnext:main": "src/MorphReplace.js",
