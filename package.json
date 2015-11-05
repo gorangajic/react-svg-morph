@@ -6,6 +6,7 @@
   "jsnext:main": "src/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "prepublish": "npm run build",
     "eslint": "eslint src"
   },
   "repository": {
