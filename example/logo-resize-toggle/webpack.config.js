@@ -1,7 +1,6 @@
 var path = require('path');
 
 module.exports = {
-    context: path.resolve(__dirname, '..', '..'),
     entry: path.join(__dirname, 'main'),
     output: {
         path: path.join(__dirname),
