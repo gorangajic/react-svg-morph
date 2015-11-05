@@ -57,10 +57,10 @@ class MorphReplace extends React.Component {
             React.createElement(this.transitionElement, {
                 ...this.props,
                 progress: this.state.progress,
-            }, [
-                React.cloneElement(this.state.from, {type: 'from'}),
-                React.cloneElement(this.state.to, {type: 'to'}),
-            ])
+            }, {
+                from: React.cloneElement(this.state.from),
+                to: React.cloneElement(this.state.to),
+            })
         );
     }
 }

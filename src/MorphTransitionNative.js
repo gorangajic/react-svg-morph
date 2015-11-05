@@ -23,7 +23,4 @@ class MorphTransitionNative extends MorphTransition {
             </Surface>
         );
     }
-    loopChildren(fn) {
-        this.props.children.forEach(fn);
-    }
 }

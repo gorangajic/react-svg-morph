@@ -64,24 +64,13 @@ class MorphTransition extends React.Component {
         this[type + 'Child'] = child;
         this[type + 'Svg'] = this.getSvgInfo(child);
     }
-    loopChildren(fn) {
-        React.Children.toArray(this.props.children).forEach(fn);
-    }
     setChildren() {
-        this.loopChildren((child) => {
-            if (!child || !child.props) {
-                return ;
-            }
-            if ( child.props.type === "from") {
-                this.setChild('from', child);
-            }
-            if (child.props.type === "to") {
-                this.setChild('to', child);
-            }
-        });
-        if (!this.toSvg || !this.fromSvg) {
-            throw new Error("Please provide `from` and `to` elements")
+        if (!this.props.children.from || !this.props.children.to) {
+            throw new Error("Please provide `from` and `to` React elements");
         }
+
+        this.setChild('from', this.props.children.from);
+        this.setChild('to', this.props.children.to);
     }
     getSvgInfo(child) {
         let key = child.key;
@@ -104,7 +93,7 @@ MorphTransition.propTypes = {
     height: React.PropTypes.number,
     duration: React.PropTypes.number,
     progress: React.PropTypes.number,
-    children: React.PropTypes.arrayOf(React.PropTypes.element),
+    children: React.PropTypes.object,
     viewBox: React.PropTypes.string
 };
 
