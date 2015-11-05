@@ -1,6 +1,5 @@
 var React = require('react');
 var TodoItem = require('./todoItem');
-var Utils = require('./utils');
 var ENTER_KEY = 13;
 
 var TodoApp = React.createClass({
@@ -9,11 +8,11 @@ var TodoApp = React.createClass({
 			editing: null,
 			newTodo: '',
 			todos: [{
-				id: Utils.uuid(),
+				id: 1,
 				completed: true,
 				title: 'learn about react svg morph',
 			}, {
-				id: Utils.uuid(),
+				id: 2,
 				title: 'check me!!!️',
 				completed: false
 			}]
@@ -38,10 +37,10 @@ var TodoApp = React.createClass({
 		var todos = this.state.todos.slice(0);
 		todos.unshift({
 			title: val,
-			id: Utils.uuid(),
+			id: Date.now(),
 			completed: false
 		});
-		this.setState({todos: todos});
+		this.setState({todos: todos, newTodo: ''});
 	},
 
 	toggle: function (todoToToggle) {
