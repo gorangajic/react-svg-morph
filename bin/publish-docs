@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+rm -rf tmp
+cp -r docs tmp
+cd tmp
+npm install
+webpack
+git init
+git add .
+git commit -m "published docs"
+git remote add origin git@github.com:gorangajic/react-svg-morph.git
+git push --force origin master:gh-pages
