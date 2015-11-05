@@ -1,24 +1,22 @@
-
-
 # React svg morph
 
-> morph your svg component one into another other 🎉
+> morph your svg components one into another other on web and react-native
 
 <img src="https://rawgit.com/gorangajic/react-svg-morph/master/example.gif" width="60" alt="React Icons">
 
 
-## Instalation
+# Instalation
 
 ```
 npm install react-svg-morph --save
 ```
 
-## Usage example
+# Usage example
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MorphReplace from 'react-svg-morph';
+import { MorphReplace } from 'react-svg-morph';
 
 class Checked extends React.Component {
     render() {
@@ -63,6 +61,99 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
+
+# API
+
+### &lt;MorphReplace /> or &lt;MorphReplaceNative />
+> when children element change it will morph from one svg element into another svg element
+Props:
+
+##### `width: Number`
+width of the svg element defaults to 40
+##### `height: Number`
+height of the svg element defaults to 40
+##### `viewBox: String`
+viewBox of the svg element default to `0 0 ${width} ${height}`
+##### `duration: Number`
+swap animation duration in ms defaults to 350 ms
+##### `rotation: String`
+rotation of the animation available options are `clockwise`, `counterclock`, `none` defaults to _`clockwise`_
+##### `easing: function`
+easing function, default easing is linear
+```javascript
+/*
+ * Easing Functions - inspired from http://gizma.com/easing/
+ * only considering the t value for the range [0, 1] => [0, 1]
+ */
+var easeInCubic = function(t) {
+    return t*t*t;
+}
+```
+there is default easing functions already provided in `src/utils/easing` or `lib/utils/easing` so you can reuse them
+```
+import {easeInQuint} from `lib/utils/easing`
+<MorphReplace easing={easeInQuint}>
+    {this.state.checked ? <Checked /> : <CheckBox />}
+</MorphReplace>
+
+```
+##### `children: React.Element`
+only element you want to display need to be passed as children, when you replace that element with new one animation will be triggered
+
+> every other props passed to the element will be passed to svg, so you can also pass normal svg attributes like `fill`,`opaticy`,`styles`...
+
+##### usage example
+
+```
+import {MorphReplace} from 'react-svg-morph';
+
+render() {
+    return (
+        <MorphReplace width={100} height={100}>
+            {this.state.checked ? <Checked /> : <CheckBox />}
+        </MorphReplace>
+    )
+}
+```
+### &lt;MorphReplaceResize />
+> same as `MorphReplace` only you should use this when you have two svg elements that have different viewBox attributes so `MorphReplaceResize` will normalize their paths before passing it to `MorphReplace`
+
+### &lt;MorphTransition /> or &lt;MorphTransitionNative />
+
+##### `width: Number`
+width of the svg element defaults to 40
+##### `height: Number`
+height of the svg element defaults to 40
+##### `viewBox: String`
+viewBox of the svg element default to `0 0 ${width} ${height}`
+> viewBox is ignored in react-native
+##### `progress: Number`
+current progress of the svg animation, default to 0
+##### `rotation: String`
+rotation of the animation available options are `clockwise`, `counterclock`, `none` defaults to _`clockwise`_
+> every other props passed to the element will be passed to svg, so you can passs normal svg attributes like `fill`,`opaticy`,`styles`...
+
+##### `children: Object{from: React.Element, to: React.Element}`
+accept two React elements that need to have svg element inside, it will morph one into another based on progress passed
+
+##### usage example
+```
+import {MorphTransition} from 'react-svg-morph';
+
+render() {
+    return (
+        <MorphTransition progres={50} width={100} height={100}>
+            {from: <LoveSvg />, to: <LogoSvg />}
+        </MorphReplace>
+    )
+}
+```
+> it can be also used with `react-motion` check [example](https://github.com/gorangajic/react-svg-morph/tree/master/example/react-motion)
+
+
+## Related
+
+- [react-icons](https://github.com/gorangajic/react-icons/) it work with react-icons out of the box because they are all normalized to the same size
 
 ## Credits
 
