@@ -35,9 +35,9 @@ class App extends React.Component {
     render() {
         return (
             <div onClick={this.toggleChecked.bind(this)}>
-                <SvgMorph width={100} height={100}>
-                    {this.state.checked ? <Checked /> : <CheckBox />}
-                </SvgMorph>
+                <MorphReplace width={100} height={100}>
+                    {this.state.checked ? <Checked key="checked" /> : <CheckBox key="checkbox" />}
+                </MorphReplace>
             </div>
         );
     }

@@ -11,7 +11,7 @@
     "eslint-plugin-react": "^3.6.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
-    "react-svg-morph": "*",
+    "react-svg-morph": "^0.1.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   }
