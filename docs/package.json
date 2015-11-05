@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "Goran Gajic <fero.null@gmail.com>",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "classnames": "^2.2.0",
+    "eslint": "^1.8.0",
+    "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-react": "^3.6.3",
+    "prismjs": "^1.3.0",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-icons": "^0.1.4",
+    "react-prism": "^3.0.0",
+    "react-pure-render": "^1.0.2",
+    "react-svg-morph": "0.0.3"
+  }
+}
