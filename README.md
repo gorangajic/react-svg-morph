@@ -1,6 +1,6 @@
 # React svg morph
 
-> morph your svg components one into another other on web and react-native
+> morph your svg components one into another
 
 <img src="https://rawgit.com/gorangajic/react-svg-morph/master/example.gif" width="60" alt="React Icons">
 
