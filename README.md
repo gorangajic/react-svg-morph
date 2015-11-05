@@ -148,7 +148,7 @@ render() {
     )
 }
 ```
-> it can be also used with `react-motion` check [example](https://github.com/gorangajic/react-svg-morph/tree/master/example/react-motion)
+> it can be also used with `react-motion`
 
 
 ## Related
