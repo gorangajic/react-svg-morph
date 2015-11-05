@@ -17,7 +17,7 @@
     "react-icons": "^0.1.4",
     "react-prism": "^3.0.0",
     "react-pure-render": "^1.0.2",
-    "react-svg-morph": "0.0.3",
+    "react-svg-morph": "^0.1.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   }

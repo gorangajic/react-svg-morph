@@ -1,6 +1,6 @@
 var Checkbox = require('react-icons/lib/md/check-box-outline-blank');
 var Check = require('react-icons/lib/md/check');
-var SvgMorph = require('react-svg-morph');
+var {MorphReplace} = require('react-svg-morph');
 
 var MorphCheckbox = React.createClass({
   render: function () {
@@ -11,9 +11,9 @@ var MorphCheckbox = React.createClass({
       icon = <Checkbox key="checkbox"/>;
     }
     return (
-      <SvgMorph width={24} height={24}>
+      <MorphReplace width={24} height={24}>
         {icon}
-      </SvgMorph>
+      </MorphReplace>
     )
   }
 });

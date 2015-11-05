@@ -6,12 +6,6 @@ import { PrismCode } from "react-prism";
 require('prismjs');
 require('prismjs/components/prism-javascript');
 class App extends React.Component {
-    // TODO add code example
-    // <SvgMorph>
-    //     { this.props.todo.completed ?
-    //       <Check key="check" fill="#00ff00"/> :
-    //       <Checkbox key="checkbox"/> }
-    // </SvgMorph>
     render() {
         return (
             <div>
