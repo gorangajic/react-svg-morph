@@ -24,7 +24,8 @@
     "guard-for-in": 0,
     "no-shadow": 0,
     "no-param-reassing": 0,
-    "quotes": 0
+    "quotes": 0,
+    "func-names": 0
   },
   "plugins": [
     "react"
