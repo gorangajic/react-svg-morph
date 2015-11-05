@@ -1,6 +1,6 @@
-# logo resize toggle example
+# logo resize example
 
-> logo icon have viewBox differnet than heart viewbox and with SvgMorphResize they will be normalized to the same size
+> logo icon svg and heart have differnet viewBox so we use MorphReplaceResize so they are normalized
 
 ### run example
 

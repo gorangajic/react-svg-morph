@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SvgMorphResize } from 'react-svg-morph';
+import { MorphReplaceResize } from 'react-svg-morph';
 import Logo from './logo';
 import TiHeart from 'react-icons/lib/ti/heart';
 
@@ -17,11 +17,11 @@ class App extends React.Component {
         }, 1500)
     }
     render() {
-        var icon = this.increment % 2 === 1 ? <Logo key="logo" /> : <Heart fill="#FF0000" key="heart" />;
+        var icon = this.increment % 2 === 1 ? <Logo key="logo" /> : <TiHeart fill="#FF0000" key="heart" />;
         return (
-            <SvgMorphResize width={100} height={100}>
+            <MorphReplaceResize width={100} height={100}>
                 {icon}
-            </SvgMorphResize>
+            </MorphReplaceResize>
         );
     }
 }
