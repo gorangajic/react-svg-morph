@@ -1,7 +1,7 @@
 import React from 'react';
 import Heart from './Heart';
 import Logo from './Logo';
-import MorphReplace from 'react-svg-morph/lib/MorphReplace';
+import { MorphReplace } from 'react-svg-morph';
 import GithubIcon from 'react-icons/lib/go/octicon-logo-github';
 export default
 class Header extends React.Component {
