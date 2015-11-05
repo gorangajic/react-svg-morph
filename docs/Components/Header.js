@@ -1,7 +1,5 @@
 import React from 'react';
-import Heart from './Heart';
-import Logo from './Logo';
-import { MorphReplace } from 'react-svg-morph';
+import MorphLogo from './MorphLogo';
 import GithubIcon from 'react-icons/lib/go/octicon-logo-github';
 export default
 class Header extends React.Component {
@@ -27,12 +25,7 @@ class Header extends React.Component {
     render() {
         return (<div className="header">
             <div className="logo">
-                <MorphReplace width={250} height={250} duration={350}>
-                    { this.state.toggle ?
-                        <Logo key="checked" type="from"/> :
-                        <Heart fill="#ff0000" type="to" key="checkbox"/>
-                    }
-                </MorphReplace>
+                <MorphLogo />
             </div>
             <h1> React SVG Morph </h1>
             <p className="desc">morph your svg components one into another other</p>

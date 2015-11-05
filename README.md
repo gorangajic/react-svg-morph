@@ -155,6 +155,10 @@ render() {
 
 - [react-icons](https://github.com/gorangajic/react-icons/) it work with react-icons out of the box because they are all normalized to the same size
 
+## License
+
+MIT Copyright (c) Goran Gajic 2015
+
 ## Credits
 
 > svg convert algoritam is takan from https://github.com/alexk111/SVG-Morpheus and addapted

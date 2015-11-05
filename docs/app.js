@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Components/Header';
+import MorphLogo from './Components/MorphLogo';
 import TodoApp from './examples/todomvc/todoapp';
 import { PrismCode } from "react-prism";
 require('prismjs');
@@ -25,6 +26,9 @@ class App extends React.Component {
                         <TodoApp />
                     </div>
                 </div>
+                <p style={{textAlign: 'center', marginTop: 50}}>
+                    Made with <MorphLogo width={16} height={16} style={{verticalAlign: 'middle'}} /> by <a href="https://twitter.com/golenull">Goran Gajic</a> 2015
+                </p>
             </div>
         );
     }
