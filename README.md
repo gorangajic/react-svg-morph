@@ -61,6 +61,13 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
+# Usage with react-native
+
+`react-svg-morph` only works on ios because react native art package is [only available there](https://facebook.github.io/react-native/docs/known-issues.html). Before getting started you will need to include ReactNativeArt into your project, there is good example how to do that on this link http://browniefed.com/blog/2015/05/03/getting-react-art-running-on-react-native/
+
+Evrything else is the same only you need to include `MorphReplaceNative` and `MorphTransitionNative` from `react-svg-morph/native`. 
+
+For now it works with normal svg tags/components like in example top.
 
 # API
 
