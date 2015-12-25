@@ -1,5 +1,4 @@
 // request animation frame
-require('./utils/raf');
 
 import React from 'react';
 import MorphTransition from './MorphTransition';
