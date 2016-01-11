@@ -105,13 +105,13 @@ import {easeInQuint} from `lib/utils/easing`
 
 ```
 ##### `children: React.Element`
-only element you want to display need to be passed as children, when you replace that element with new one animation will be triggered
+only element you want to display need to be passed as children, when you replace that element with new one animation will be triggered. It's important to provide `key` prop to child element so `MorphReplace` know when child is changed.
 
 > every other props passed to the element will be passed to svg, so you can also pass normal svg attributes like `fill`,`opaticy`,`styles`...
 
 ##### usage example
 
-```
+```javascript
 import {MorphReplace} from 'react-svg-morph';
 
 render() {
