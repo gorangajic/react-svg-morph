@@ -117,7 +117,7 @@ import {MorphReplace} from 'react-svg-morph';
 render() {
     return (
         <MorphReplace width={100} height={100}>
-            {this.state.checked ? <Checked /> : <CheckBox />}
+            {this.state.checked ? <Checked key={'checked'} /> : <CheckBox key={'checkbox'}/>}
         </MorphReplace>
     )
 }
