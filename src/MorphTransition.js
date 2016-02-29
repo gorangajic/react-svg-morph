@@ -34,10 +34,16 @@ class MorphTransition extends React.Component {
     }
 
     render() {
-        var width = this.props.width;
-        var height = this.props.height;
+        const {
+            rotation,
+            duration,
+            progress,
+            viewBox,
+            ...otherProps,
+        } = this.props;
+
         return (
-            <svg viewBox={this.viewBox} preserveAspectRatio="xMidYMid meet" fit width={width} height={height}>
+            <svg viewBox={this.viewBox} preserveAspectRatio="xMidYMid meet" fit {...otherProps}>
                 {this.state.current.map((item, index) => {
                     return (<path d={item.path} key={index} {...item.attrs} style={item.style} transform={item.transStr} />);
                 })}
