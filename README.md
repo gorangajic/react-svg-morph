@@ -134,6 +134,7 @@ height of the svg element defaults to 40
 ##### `viewBox: String`
 viewBox of the svg element default to `0 0 ${width} ${height}`
 > viewBox is ignored in react-native
+
 ##### `progress: Number`
 current progress of the svg animation, default to 0
 ##### `rotation: String`
@@ -142,6 +143,9 @@ rotation of the animation available options are `clockwise`, `counterclock`, `no
 
 ##### `children: Object{from: React.Element, to: React.Element}`
 accept two React elements that need to have svg element inside, it will morph one into another based on progress passed
+
+##### other props
+All other props will be passed to the svg element
 
 ##### usage example
 ```
