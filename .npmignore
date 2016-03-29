@@ -1,5 +1,8 @@
 examples
+example
 docs
 play
 tmp
 .eslintrc
+.babelrc
+example.gif
