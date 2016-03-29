@@ -105,19 +105,19 @@ import {easeInQuint} from `lib/utils/easing`
 
 ```
 ##### `children: React.Element`
-only element you want to display need to be passed as children, when you replace that element with new one animation will be triggered
+only element you want to display need to be passed as children, when you replace that element with new one animation will be triggered. It's important to provide `key` prop to child element so `MorphReplace` know when child is changed.
 
 > every other props passed to the element will be passed to svg, so you can also pass normal svg attributes like `fill`,`opaticy`,`styles`...
 
 ##### usage example
 
-```
+```javascript
 import {MorphReplace} from 'react-svg-morph';
 
 render() {
     return (
         <MorphReplace width={100} height={100}>
-            {this.state.checked ? <Checked /> : <CheckBox />}
+            {this.state.checked ? <Checked key={'checked'} /> : <CheckBox key={'checkbox'}/>}
         </MorphReplace>
     )
 }
@@ -134,6 +134,7 @@ height of the svg element defaults to 40
 ##### `viewBox: String`
 viewBox of the svg element default to `0 0 ${width} ${height}`
 > viewBox is ignored in react-native
+
 ##### `progress: Number`
 current progress of the svg animation, default to 0
 ##### `rotation: String`
@@ -142,6 +143,9 @@ rotation of the animation available options are `clockwise`, `counterclock`, `no
 
 ##### `children: Object{from: React.Element, to: React.Element}`
 accept two React elements that need to have svg element inside, it will morph one into another based on progress passed
+
+##### other props
+All other props will be passed to the svg element
 
 ##### usage example
 ```
