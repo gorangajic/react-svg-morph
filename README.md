@@ -52,7 +52,7 @@ class App extends React.Component {
         return (
             <div onClick={this.toggleChecked.bind(this)}>
                 <MorphReplace width={100} height={100}>
-                    {this.state.checked ? <Checked /> : <CheckBox />}
+                    {this.state.checked ? <Checked key="checked" /> : <CheckBox key="checkbox" />}
                 </MorphReplace>
             </div>
         );
