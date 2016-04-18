@@ -27,7 +27,7 @@
     "url": "https://github.com/gorangajic/react-svg-morph/issues"
   },
   "dependencies": {
-    "react-render-to-json": "0.0.1",
+    "react-render-to-json": "0.0.3",
     "svgpath": "^2.1.0"
   },
   "devDependencies": {
