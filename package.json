@@ -1,6 +1,6 @@
 {
   "name": "react-svg-morph",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "morph your svg component one into another",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -27,7 +27,7 @@
     "url": "https://github.com/gorangajic/react-svg-morph/issues"
   },
   "dependencies": {
-    "react-render-to-json": "0.0.1",
+    "react-render-to-json": "0.0.4",
     "svgpath": "^2.1.0"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "webpack": "^1.12.2"
   },
   "peerDependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   }
 }
