@@ -6,7 +6,7 @@
 // MIT license
 
 (function() {
-    if (!window) {
+    if (typeof window === "undefined") {
         // ignore polyfill if non browser enviroment
         return;
     }
