@@ -18,7 +18,7 @@ class MorphTransition extends React.Component {
         this.reset = true;
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.update(1);
     }
 
