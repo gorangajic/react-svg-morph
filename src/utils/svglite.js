@@ -634,6 +634,9 @@ export function rgbToString(rgb) {
     return "rgba(" + [round(rgb.r), round(rgb.g), round(rgb.b), +rgb.opacity.toFixed(2)] + ")";
 };
 export function toHex(color) {
+    // Remind: to fix SSR problem issue#3
+    if (typeof window === "undefined") return;
+
     var i = window.document.getElementsByTagName("head")[0] || window.document.getElementsByTagName("svg")[0],
             red = "rgb(255, 0, 0)";
     toHex = function (color) {
