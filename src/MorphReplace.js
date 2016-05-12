@@ -32,6 +32,7 @@ class MorphReplace extends React.Component {
 
 
     componentWillUnmount() {
+        cancelAnimationFrame(this.raf);
         // TODO
         // not sure should we call componentWillUnomunt on childrens
     }
