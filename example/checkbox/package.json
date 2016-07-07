@@ -9,8 +9,8 @@
     "eslint": "^1.8.0",
     "eslint-config-airbnb": "^0.1.0",
     "eslint-plugin-react": "^3.6.3",
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "react-svg-morph": "^0.1.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
