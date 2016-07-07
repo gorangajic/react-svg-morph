@@ -38,6 +38,7 @@ class MorphTransition extends React.Component {
             rotation,
             duration,
             progress,
+            easing,
             viewBox,
             ...otherProps,
         } = this.props;
