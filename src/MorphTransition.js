@@ -44,7 +44,7 @@ class MorphTransition extends React.Component {
         } = this.props;
 
         return (
-            <svg viewBox={this.viewBox} preserveAspectRatio="xMidYMid meet" {...otherProps}>
+            <svg viewBox={this.viewBox} {...otherProps}>
                 {this.state.current.map((item, index) => {
                     return (<path d={item.path} key={index} {...item.attrs} style={item.style} transform={item.transStr} />);
                 })}
@@ -101,7 +101,15 @@ MorphTransition.propTypes = {
     duration: React.PropTypes.number,
     progress: React.PropTypes.number,
     children: React.PropTypes.object,
-    viewBox: React.PropTypes.string
+    viewBox: React.PropTypes.string,
+    preserveAspectRatio: function(props, propName, componentName) {
+        const regexp = /^(\s+)?(none|xMinYMin|xMidYMin|xMaxYMin|xMinYMid|xMidYMid|xMaxYMid|xMinYMax|xMidYMax|xMaxYMax)(\s+)?(meet|slice)?(\s+)?$/;
+        if (!regexp.test(props[propName])) {
+            return new Error(
+              `Validation failed. Invalid prop '${propName}' supplied to '${componentName}'.`
+            );
+        }
+    },
 };
 
 MorphTransition.defaultProps = {
@@ -110,6 +118,6 @@ MorphTransition.defaultProps = {
     duration: 350,
     rotation: 'clockwise',
     progress: 0,
+    preserveAspectRatio: 'xMidYMid meet',
     easing: function(t) { return t; }
 };
-
