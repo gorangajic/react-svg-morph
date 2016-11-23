@@ -73,7 +73,7 @@ MorphReplace.propTypes = {
     children: React.PropTypes.element,
     viewBox: React.PropTypes.string,
     preserveAspectRatio: function(props, propName, componentName) {
-        const regexp = /^(\s+)?(none|xMinYMin|xMidYMin|xMaxYMin|xMinYMid|xMidYMid|xMaxYMid|xMinYMax|xMidYMax|xMaxYMax)\s+?(meet|slice)?(\s+)?$/;
+        const regexp = /^(\s+)?(none|xMinYMin|xMidYMin|xMaxYMin|xMinYMid|xMidYMid|xMaxYMid|xMinYMax|xMidYMax|xMaxYMax)(\s+)?(meet|slice)?(\s+)?$/;
         if (!regexp.test(props[propName])) {
             return new Error(
               `Validation failed. Invalid prop '${propName}' supplied to '${componentName}'.`
