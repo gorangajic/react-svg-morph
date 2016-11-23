@@ -32,6 +32,7 @@ class MorphReplace extends React.Component {
 
 
     componentWillUnmount() {
+        cancelAnimationFrame(this.raf);
         // TODO
         // not sure should we call componentWillUnomunt on childrens
     }
@@ -71,6 +72,14 @@ MorphReplace.propTypes = {
     duration: React.PropTypes.number,
     children: React.PropTypes.element,
     viewBox: React.PropTypes.string,
+    preserveAspectRatio: function(props, propName, componentName) {
+        const regexp = /^(\s+)?(none|xMinYMin|xMidYMin|xMaxYMin|xMinYMid|xMidYMid|xMaxYMid|xMinYMax|xMidYMax|xMaxYMax)(\s+)?(meet|slice)?(\s+)?$/;
+        if (!regexp.test(props[propName])) {
+            return new Error(
+              `Validation failed. Invalid prop '${propName}' supplied to '${componentName}'.`
+            );
+        }
+    },
 };
 
 MorphReplace.defaultProps = {
@@ -78,5 +87,5 @@ MorphReplace.defaultProps = {
     height: 40,
     duration: 350,
     rotation: 'clockwise',
+    preserveAspectRatio: 'xMidYMid meet',
 };
-

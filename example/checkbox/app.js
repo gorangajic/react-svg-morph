@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MorphReplace } from 'react-svg-morph';
+import MorphReplace from '../../src/MorphReplace';
 
 class Checked extends React.Component {
     render() {

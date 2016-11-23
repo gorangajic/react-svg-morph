@@ -65,7 +65,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 
 `react-svg-morph` only works on ios because react native art package is [only available there](https://facebook.github.io/react-native/docs/known-issues.html). Before getting started you will need to include ReactNativeArt into your project, there is good example how to do that on this link http://browniefed.com/blog/2015/05/03/getting-react-art-running-on-react-native/
 
-Evrything else is the same only you need to include `MorphReplaceNative` and `MorphTransitionNative` from `react-svg-morph/native`. 
+Everything else is the same only you need to include `MorphReplaceNative` and `MorphTransitionNative` from `react-svg-morph/native`.
 
 For now it works with normal svg tags/components like in example top.
 
@@ -85,6 +85,8 @@ viewBox of the svg element default to `0 0 ${width} ${height}`
 swap animation duration in ms defaults to 350 ms
 ##### `rotation: String`
 rotation of the animation available options are `clockwise`, `counterclock`, `none` defaults to _`clockwise`_
+##### `preserveAspectRatio: String`
+Attribute `preserveAspectRatio` indicates whether or not to force uniform scaling. For available options look [here](https://developer.mozilla.org/en/docs/Web/SVG/Attribute/preserveAspectRatio). Default value is `xMidYMid meet`.
 ##### `easing: function`
 easing function, default easing is linear
 ```javascript
