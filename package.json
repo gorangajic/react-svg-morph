@@ -27,6 +27,9 @@
     "url": "https://github.com/gorangajic/react-svg-morph/issues"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-render-to-json": "0.0.4",
     "svgpath": "^2.1.0"
   },
@@ -39,7 +42,7 @@
     "webpack": "^1.12.2"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0"
   }
 }
