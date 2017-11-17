@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import normalizeSvg from './utils/normalizeSvg';
 import { normalizePaths, getProgress } from './utils/morph';
 import renderToJson from 'react-render-to-json';
@@ -95,13 +96,13 @@ class MorphTransition extends React.Component {
 }
 
 MorphTransition.propTypes = {
-    rotation: React.PropTypes.oneOf(['clockwise', 'counterclock', 'none']),
-    width: React.PropTypes.number,
-    height: React.PropTypes.number,
-    duration: React.PropTypes.number,
-    progress: React.PropTypes.number,
-    children: React.PropTypes.object,
-    viewBox: React.PropTypes.string,
+    rotation: PropTypes.oneOf(['clockwise', 'counterclock', 'none']),
+    width: PropTypes.number,
+    height: PropTypes.number,
+    duration: PropTypes.number,
+    progress: PropTypes.number,
+    children: PropTypes.object,
+    viewBox: PropTypes.string,
     preserveAspectRatio: function(props, propName, componentName) {
         const regexp = /^(\s+)?(none|xMinYMin|xMidYMin|xMaxYMin|xMinYMid|xMidYMid|xMaxYMid|xMinYMax|xMidYMax|xMaxYMax)(\s+)?(meet|slice)?(\s+)?$/;
         if (!regexp.test(props[propName])) {
