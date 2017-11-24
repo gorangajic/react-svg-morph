@@ -74,7 +74,7 @@ export function getAllChildren(node) {
     for ( ; i < len; i++) {
         let el = node.children[i];
         els.push(el);
-        if (el.children && el.children.length > 0) {
+        if (el.children && el.children.filter(Boolean).length > 0) {
             els = els.concat(getAllChildren(el));
         }
     }
