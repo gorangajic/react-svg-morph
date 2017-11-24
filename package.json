@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react-render-to-json": "0.0.5",
+    "react-render-to-json": "0.0.6",
     "svgpath": "^2.1.0"
   },
   "devDependencies": {
