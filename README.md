@@ -150,7 +150,7 @@ accept two React elements that need to have svg element inside, it will morph on
 All other props will be passed to the svg element
 
 ##### usage example
-```
+```javascript
 import {MorphTransition} from 'react-svg-morph';
 
 render() {
