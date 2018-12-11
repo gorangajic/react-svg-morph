@@ -157,7 +157,7 @@ render() {
     return (
         <MorphTransition progres={50} width={100} height={100}>
             {from: <LoveSvg />, to: <LogoSvg />}
-        </MorphReplace>
+        </MorphTransition>
     )
 }
 ```
